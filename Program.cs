@@ -68,7 +68,7 @@ void InputQuery()
         Console.WriteLine($"\nQuery Time: {queryWatch.ElapsedMilliseconds} ms");
         Console.WriteLine(result.Count + " Elements returned for query " + query);
     }
-    catch(NullReferenceException e )
+    catch(Exception e )
     {
         Console.WriteLine("\nInvalid Query or no matching path found. Please Input again");
         InputQuery();

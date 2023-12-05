@@ -5,6 +5,7 @@ bool IsRunning = true;
 String SWISSPROT = "./res/SwissProt.xml";
 String NASA = "./res/Nasa.xml";
 String AUCTIONDATA = "./res/Auction_Data.xml";
+String TESTXML = "./res/Test.xml";
 string urlString = "";
 var utility = new Utility();
 
@@ -17,7 +18,7 @@ while (IsRunning)
 void InputDatabase()
 {
     Console.WriteLine("\nSelect which database to load.\n1. Swiss Protein Database"
-        + "\n2. Nasa Database" + "\n3. Auction Database");
+        + "\n2. Nasa Database" + "\n3. Auction Database" + "\n4. Test XML File");
     string input = Console.ReadLine();
     if (input == null || input == string.Empty)
     {
@@ -25,7 +26,7 @@ void InputDatabase()
     }
     input = input.Trim();
     CheckForEnd(input);
-    if (input != "1" && input != "2" && input != "3" && input!= "END")
+    if (input != "1" && input != "2" && input != "3" && input != "4" && input!= "END")
     {
         Console.WriteLine("\nInvalid Input please try again.");
         InputDatabase();
@@ -40,6 +41,9 @@ void InputDatabase()
             break;
         case "3":
             urlString = AUCTIONDATA; break;
+        case "4":
+            urlString = TESTXML;
+            break;
         case "END":
             IsRunning = false;
             break;
